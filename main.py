@@ -33,3 +33,19 @@ def addData():
         return jsonify({'message': 'the data was successfully added to the database'})
     except Exception as error:
         return jsonify({'message': error})
+
+
+@app.route('/api/deleteData/<int:id>', methods=['DELETE'])
+def deleteData(id):
+    try:
+        if Users.query.filter_by(id=id).first():
+            # id = request.json.get('id')
+            data = Users.query.filter_by(id=id).first()
+            print(data)
+            db.session.delete(data)
+            db.session.commit()
+            return jsonify({'message': 'the data was successfully deleted from the database'})
+        else:
+            return jsonify({'message': 'the data does not exist in the database'})
+    except Exception as error:
+        return jsonify({'message': error})

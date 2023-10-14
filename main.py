@@ -62,3 +62,13 @@ def getData():
         return jsonify(datalist)
     except Exception as error:
         return jsonify({'message': error})
+
+
+@app.route("/api/allDelete", methods=['DELETE'])
+def allDelete():
+    try:
+        db.session.query(Users).delete()
+        db.session.commit()
+        return jsonify({'message': 'all data was successfully deleted from the database'})
+    except Exception as error:
+        return jsonify({'message': error})

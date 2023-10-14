@@ -158,9 +158,12 @@ python3 main.py
 The project provides the following endpoints:
 
 -   `api/addData`: Make a POST request to add a new record to the database.
+
     -   Example usage: `api/addData/1`
     -   Warning!!! ; When sending a POST request, you need to add the data you want to add in JSON format to the Body of the request.
+
         -   Example;
+
             ```json
             {
                 "username": "username",
@@ -190,21 +193,24 @@ The project provides the following endpoints:
 <br>
 
 -   `api/updateData/<int:id>`: Make a PUT request to update a record with the specified ID.
+
     -   Example usage: `api/updateData/1`
     -   Warning!!! ; When sending a PUT request, you need to add the data you want to update in JSON format to the Body of the request
+
         -   Example;
-        ```json
-        {
-            "username": "username",
-            "password": "password",
-            "email": "example@example.com",
-            "phone": "0555555555",
-            "address": "example example",
-            "city": "City",
-            "state": "State",
-            "product_name": "Product Name"
-        }
-        ```
+
+            ```json
+            {
+                "username": "username",
+                "password": "password",
+                "email": "example@example.com",
+                "phone": "0555555555",
+                "address": "example example",
+                "city": "City",
+                "state": "State",
+                "product_name": "Product Name"
+            }
+            ```
 
 ## Database
 

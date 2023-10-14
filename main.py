@@ -49,3 +49,16 @@ def deleteData(id):
             return jsonify({'message': 'the data does not exist in the database'})
     except Exception as error:
         return jsonify({'message': error})
+
+
+@app.route('/api/getData', methods=['GET'])
+def getData():
+    try:
+        datas = Users.query.all()
+        print(datas)
+        datalist = []
+        datalist = [{"id": data.id, "username": data.username,
+                    "password": data.password.decode('utf-8'), "email": data.email, "phone": data.phone, "address": data.address, "state": data.state, "city": data.city, "product_name": data.product_name} for data in datas]
+        return jsonify(datalist)
+    except Exception as error:
+        return jsonify({'message': error})

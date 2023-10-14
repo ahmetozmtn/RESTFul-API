@@ -2,8 +2,6 @@
 RestFul API Example
 </h1>
 
-<h2 align="center"> <a href="#tr">Turkish</a> | <a href="#eng">English</a>  </h2>
-
 ### Bu proje, Flask ve SQLAlchemy kullanılarak geliştirilmiş basit bir RESTful API örneği'dir.
 
 ## Kurulum ve çalıştırma
@@ -82,7 +80,8 @@ Proje aşağıdaki endpointleri sağlamaktadır:
 
 -   `api/updateData/<int:id>`: Belirtilen ID'ye sahip kaydı güncellemek için PUT isteği yapılır.
     -   Örnek kullanım: `api/updateData/1`
-    -   Uyarı!!! ; PUT istediği atarken güncellemek istediğiniz verilerin JSON formatında isteğin Body kısmına ekleminiz gerekiyor - Örnek;
+    -   Uyarı!!! ; PUT istediği atarken güncellemek istediğiniz verilerin JSON formatında isteğin Body kısmına ekleminiz gerekiyor
+        -   Örnek;
         ```json
         {
             "username": "username",
@@ -107,6 +106,8 @@ Eğer projeye katkıda bulunmak isterseniz, lütfen bir Pull Requets oluşturun.
 ## Lisans
 
 Bu proje [MIT lisansı](LICENSE) altında lisanslanmıştır.
+
+<br>
 
 <h1 id="eng" style="text-align:center">
 RESTful API Example

@@ -72,3 +72,35 @@ def allDelete():
         return jsonify({'message': 'all data was successfully deleted from the database'})
     except Exception as error:
         return jsonify({'message': error})
+
+
+@app.route('/api/updateData/<int:id>', methods=['PUT'])
+def updateData(id):
+    try:
+        data = Users.query.filter_by(id=id).first()
+        if data is None:
+            return jsonify({'message': 'the data does not exist in the database'}), 404
+        new_username = request.json.get('username')
+        new_password = request.json.get('password')
+        new_email = request.json.get('email')
+        new_phone = request.json.get('phone')
+        new_address = request.json.get('address')
+        new_city = request.json.get('city')
+        new_state = request.json.get('state')
+        new_product_name = request.json.get('product_name')
+        hashed_password = bcrypt.hashpw(
+            new_password.encode('utf-8'), bcrypt.gensalt())
+        if new_username and new_password and new_email and new_phone and new_address and new_city and new_state and new_product_name:
+            data.username = new_username
+            data.password = hashed_password
+            data.email = new_email
+            data.phone = new_phone
+            data.address = new_address
+            data.city = new_city
+            data.state = new_state
+            data.product_name = new_product_name
+        db.session.commit()
+        return jsonify({'message': 'the data was successfully updated in the database'})
+    except Exception as error:
+        db.session.rollback()
+        return jsonify({'message': error}), 500

@@ -37,7 +37,7 @@ python3 main.py
 -   Windows
 
 ```shell
-python3 main.py
+python main.py
 ```
 
 <br>
@@ -148,7 +148,7 @@ python3 main.py
 -   Windows
 
 ```shell
-python3 main.py
+python main.py
 ```
 
 <br>

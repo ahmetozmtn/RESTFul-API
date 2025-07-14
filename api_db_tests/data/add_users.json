@@ -1,0 +1,32 @@
+[
+    {
+             "username": "username1",
+             "password": "password1",
+             "email": "example1@example.com",
+             "phone": "0555555555",
+             "address": "example example1",
+             "city": "City1",
+             "state": "State1",
+             "product_name": "Product Name1"
+    },
+    {
+             "username": "username2",
+             "password": "password2",
+             "email": "example2@example.com",
+             "phone": "0555555555",
+             "address": "example example2",
+             "city": "City2",
+             "state": "State2",
+             "product_name": "Product Name2"
+    },
+    {
+             "username": "username3",
+             "password": "password3",
+             "email": "example3@example.com",
+             "phone": "0555555555",
+             "address": "example example3",
+             "city": "City3",
+             "state": "State3",
+             "product_name": "Product Name3"
+    }
+]
